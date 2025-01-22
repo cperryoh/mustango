@@ -9,7 +9,7 @@ def cache_model():
 
         # Download the riffusion model
         snapshot_download(
-            "riffusion/riffusion-model-v1",
+            "declare-lab/mustango",
             local_dir=cache_dir,
             local_dir_use_symlinks=False,
             repo_type="model"
