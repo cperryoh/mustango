@@ -21,7 +21,7 @@ import torch
 import torch.utils.checkpoint
 from torch import nn
 from torch.nn import BCEWithLogitsLoss, CrossEntropyLoss, LayerNorm, MSELoss
-
+from dataclasses import dataclass
 from transformers.activations import ACT2FN
 from transformers.modeling_outputs import (
     ModelOutput,
@@ -1442,7 +1442,9 @@ class DebertaV2ForTokenClassification(DebertaV2PreTrainedModel):
         return TokenClassifierOutput(
             loss=loss, logits=logits, hidden_states=outputs.hidden_states, attentions=outputs.attentions
         )
-    
+
+
+@dataclass 
 class TokenClassifierRegressionOutput(ModelOutput):
     """
     Base class for outputs of token classification models.
